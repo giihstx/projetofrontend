@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino do Bolo Andreia - Onde o bolo é arte e o sabor é nobreza</title>
+    <style>
+        /* Variáveis de Cores */
+        :root {
+            --primary-color: #6a1a7a; /* Roxo Escuro */
+            --secondary-color: #b366cc; /* Lilás/Roxo Claro para Destaques */
+            --text-color: #333;
+            --light-text-color: #fff;
+            --background-light: #f5f5f5;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-light);
+        }
+
+        /* Estrutura do Menu */
+        .header {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end; /* Move o menu para a direita */
+            align-items: center;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            padding-right: 20px;
+        }
+
+        .nav-menu li a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            display: flex; /* Para alinhar a imagem e o texto */
+            align-items: center; /* Para centralizar verticalmente */
+        }
+
+        .nav-menu li a:hover {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+        
+        /* Estilo para a coroa no menu */
+        .menu-crown {
+            height: 40px; /* Tamanho da coroa */
+            margin-right: 10px; /* Espaçamento entre a coroa e o texto */
+            filter: brightness(0) invert(1); /* Deixa a coroa branca para contrastar com o fundo roxo */
+        }
+
+
+        /* Seções */
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        /* Seção de Introdução/Banner */
+        #intro {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-container {
+            background-color: var(--background-light);
+            padding: 20px 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-image {
+            max-width: 500px; /* Tamanho da logo */
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .slogan-image {
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        /* Títulos */
+        h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        /* Galeria de Bolos */
+        .cake-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cake-item {
+            width: 100%;
+            max-width: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .cake-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .cake-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .cake-caption {
+            padding: 15px 10px;
+            background-color: #fff;
+            font-weight: bold;
+        }
+
+        /* Seção de Sabores */
+        #sabores {
+            background-color: var(--secondary-color);
+            color: var(--light-text-color);
+            padding: 60px 20px;
+        }
+
+        #sabores h2 {
+            color: var(--light-text-color);
+        }
+        
+        .flavors-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .flavors-content ul {
+            list-style: disc;
+            text-align: left;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .flavors-content li {
+            margin-bottom: 10px;
+        }
+        
+        .more-flavors {
+            font-style: italic;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+
+        /* Seção de Contato/Rodapé */
+        #contato {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 40px 20px;
+        }
+
+        #contato a {
+            color: var(--light-text-color);
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: block; /* Cada link em uma nova linha */
+            margin: 10px 0;
+        }
+        
+        .contact-info p {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .footer-cta {
+            font-size: 1.1em;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        /* Media Queries para Responsividade */
+        @media (min-width: 768px) {
+            .cake-item {
+                width: calc(33% - 20px); /* 3 itens por linha em telas maiores */
+            }
+            .logo-container {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav>
+            <ul class="nav-menu">
+                <img src="assets/img/ChatGPT Image 3 de nov. de 2025, 14_26_26.png" alt="Coroa" class="menu-crown"></a></li>
+                <li><a href="#bolos">Bolos</a></li>
+                <li><a href="#sabores">Sabores</a></li>
+                <li><a href="#contato">Peça Comigo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <div class="logo-container">
+            <img src="assets/img/logo.tia.png" alt="Logo Reino do Bolo Andreia" class="logo-image">
+            <img src="assets/img/frase-removebg-preview.png" alt="Onde o bolo é arte e o sabor é nobreza" class="slogan-image">
+        </div>
+        <img src="assets/img/bolo.jpg" alt="Fatia de bolo cremoso de destaque" class="hero-image">
+    </section>
+
+    <section id="bolos" class="section">
+        <h2>Bolos Deliciosos para Suas Comemorações!</h2>
+        <p>Como festas infantis, aniversários, comemorações de feriados, e muito mais!</p>
+
+        <div class="cake-gallery">
+            
+            <div class="cake-item">
+                <img src="assets/img/branca.jpg" alt="Bolo tema Branca de Neve para festa infantil">
+                <div class="cake-caption">Festas Infantis</div>
+            </div>
+
+            <div class="cake-item">
+                <img src="assets/img/bolofofo.jpg" alt="Bolo retangular simples com morangos e chantilly">
+                <div class="cake-caption">Comemorações Simples</div>
+            </div>
+
+            <div class="cake-item">
+                <img src="assets/img/boloMorango.jpg" alt="Bolo de morango e chocolate com decoração de letras">
+                <div class="cake-caption">Aniversários e Ocasiões Especiais</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sabores" class="section">
+        <div class="flavors-content">
+            <h2>Sabores Mais Pedidos!</h2>
+            
+            <ul>
+                <li>Morango com Ninho</li>
+                <li>Prestigio</li>
+                <li>Chocolate</li>
+                <li>Morango com Chocolate</li>
+                <li>Abacaxi com Ninho</li>
+            </ul>
+            <p class="more-flavors">E muito mais Sabores!</p>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <h2>Peça Comigo!</h2>
+        <p class="contact-info">Entre em contato agora para fazer sua encomenda:</p>
+        
+        <a href="https://www.instagram.com/reino_do_bolo_andreia/" target="_blank">Instagram - @reino_do_bolo_andreia</a>
+        <a href="https://wa.me/5547993428255" target="_blank">Whatsaap - (47) 99342-8255</a>
+        
+        <p class="footer-cta">Faça sua encomenda e traga a nobreza do sabor para a sua festa!</p>
+    </section>
+
+</body>
+</html>
